@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Download Debezium master branch
+      uses: actions/checkout@v2
       with:
         repository: 'igabaydulin/debezium'
         ref: 'master'
@@ -17,3 +18,14 @@ jobs:
         clean: 'true'
         fetch-depth: '1'
         lfs: 'false'
+    - name: Check folder
+      run: ls
+    - name: Build Debezium
+      run: |
+        cd debezium
+        mvn clean install -Passembly -DskipITs -DskipTests
+    - name: Run Tests
+      uses: actions/setup-java@v1
+      with:
+        java-version: 8
+    - run: ./gradlew test
