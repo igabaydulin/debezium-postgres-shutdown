@@ -1,4 +1,4 @@
-name: Debezium Master
+name: Debezium DBZ-1727
 
 on: [push]
 
