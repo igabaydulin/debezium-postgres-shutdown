@@ -19,10 +19,10 @@ jobs:
         fetch-depth: '1'
         lfs: 'false'
     - name: Check folder
-      run: ls
+      run: ls ..
     - name: Build Debezium
-      run: mvn clean install -Passembly -DskipITs -DskipTests
-    - name: Run Tests
+      run: mvn clean install -Passembly -DskipITs -DskipTests -pl debezium-connector-postgres -pl debezium-embedded
+    - name: Setup Java
       uses: actions/setup-java@v1
       with:
         java-version: 8
