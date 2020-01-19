@@ -14,16 +14,15 @@ jobs:
         repository: 'igabaydulin/debezium'
         ref: 'master'
         persist-credentials: 'false'
-        #path: ''
         clean: 'true'
         fetch-depth: '1'
         lfs: 'false'
-    - name: Check folder
-      run: ls ..
     - name: Build Debezium
       run: mvn clean install -Passembly -DskipITs -DskipTests -pl debezium-connector-postgres -pl debezium-embedded
     - name: Setup Java
       uses: actions/setup-java@v1
       with:
         java-version: 8
+    - name: Checkout Back to Project
+      uses: actions/checkout@v2
     - run: ./gradlew test
