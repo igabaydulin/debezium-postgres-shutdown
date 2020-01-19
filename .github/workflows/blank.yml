@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/cache@v1
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
     - name: Download Debezium master branch
       uses: actions/checkout@v2
       with:
