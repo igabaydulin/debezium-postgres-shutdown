@@ -1,4 +1,4 @@
-name: CI
+name: Debezium Master
 
 on: [push]
 
