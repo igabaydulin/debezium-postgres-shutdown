@@ -34,7 +34,7 @@ class PostgresContainer(imageName: Future<String>) : GenericContainer<PostgresCo
             statement.execute(query)
         }
         log.debug("Waiting until connector reads WAL log")
-        TimeUnit.SECONDS.sleep(3)
+        TimeUnit.SECONDS.sleep(10)
     }
 
     fun shutdown() {

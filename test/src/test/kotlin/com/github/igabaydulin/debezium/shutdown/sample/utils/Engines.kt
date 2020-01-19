@@ -74,7 +74,7 @@ class Engines {
             log.debug("Waiting for connector to start")
             callback.isConnectorStarted.await()
             log.debug("Waiting connector to be ready to read WAL log")
-            TimeUnit.SECONDS.sleep(3)
+            TimeUnit.SECONDS.sleep(10)
             log.debug("Connector is started")
         }
     }
