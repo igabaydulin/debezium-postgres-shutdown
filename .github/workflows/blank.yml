@@ -18,9 +18,7 @@ jobs:
         fetch-depth: '1'
         lfs: 'false'
     - name: Build Debezium
-      run: mvn clean install -Passembly -DskipITs -DskipTests -pl debezium-connector-postgres -pl debezium-embedded -pl support/ide-configs
-      env: 
-        MAVEN_OPTS: '-Dorg.slf4j.simpleLogger.defaultLogLevel=ERROR'
+      run: mvn clean install -q -Passembly -DskipITs -DskipTests -pl debezium-connector-postgres -pl debezium-embedded -pl support/ide-configs
     - name: Setup Java
       uses: actions/setup-java@v1
       with:
