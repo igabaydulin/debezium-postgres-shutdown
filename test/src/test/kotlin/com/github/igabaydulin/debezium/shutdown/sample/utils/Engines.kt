@@ -27,7 +27,7 @@ class Engines {
                 PostgresConnectorConfig.DATABASE_NAME.name() to "foo",
                 PostgresConnectorConfig.SERVER_NAME.name() to "test",
                 PostgresConnectorConfig.SLOT_NAME.name() to "embedded_debezium_slot",
-                PostgresConnectorConfig.TABLE_WHITELIST.name() to "public.apples"
+                PostgresConnectorConfig.TABLE_WHITELIST.name() to "public.bar"
         )
 
         private fun defaultPostgresConfiguration(postgresContainer: PostgresContainer): HashMap<String, Any> {
