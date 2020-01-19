@@ -21,9 +21,7 @@ jobs:
     - name: Check folder
       run: ls
     - name: Build Debezium
-      run: |
-        cd debezium
-        mvn clean install -Passembly -DskipITs -DskipTests
+      run: mvn clean install -Passembly -DskipITs -DskipTests
     - name: Run Tests
       uses: actions/setup-java@v1
       with:
