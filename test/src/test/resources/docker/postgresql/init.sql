@@ -15,4 +15,4 @@ CREATE TABLE public.bar
 );
 
 SELECT *
-FROM pg_create_logical_replication_slot('embedded_debezium_slot', 'decoderbufs');
+FROM pg_create_logical_replication_slot('embedded_debezium_slot', 'pgoutput');
